@@ -9,12 +9,11 @@ class Page(BasePage):
 
     def render(self):
         ctk.set_default_color_theme("dark-blue") 
-        ctk.grid_rowconfigure(0, weight=1)
+        self.master.grid_rowconfigure(0, weight=1)
         self.master.grid_columnconfigure(0, weight=1)
 
         frame = ctk.CTkFrame(self.master,fg_color="transparent")
         frame.grid(sticky="ew")
-
         frame.grid_columnconfigure(0, weight=1)
 
         _ctk_url = "https://customtkinter.tomschimansky.com/"
