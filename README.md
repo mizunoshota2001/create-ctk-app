@@ -1,0 +1,1 @@
+# CustomTkinterにおけるcreate-next-appのようなものを作ろうという試み
