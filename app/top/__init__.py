@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from components import BasePage
 import webbrowser
+import app.sample
 
 
 class Page(BasePage):
@@ -8,17 +9,15 @@ class Page(BasePage):
         super().__init__(master)
 
     def render(self):
-        ctk.set_default_color_theme("dark-blue") 
+        ctk.set_default_color_theme("dark-blue")
         self.master.grid_rowconfigure(0, weight=1)
         self.master.grid_columnconfigure(0, weight=1)
 
-        frame = ctk.CTkFrame(self.master,fg_color="transparent")
+        frame = ctk.CTkFrame(self.master, fg_color="transparent")
         frame.grid(sticky="ew")
         frame.grid_columnconfigure(0, weight=1)
 
         _ctk_url = "https://customtkinter.tomschimansky.com/"
-        _github_url = "https://github.com/mizunoshota2001/create-ctk-app"
-
         ctk.CTkLabel(
             frame,
             text="CreateCTkApp",
@@ -43,9 +42,9 @@ class Page(BasePage):
             command=lambda: webbrowser.open(_ctk_url)
         ).grid(pady=(0, 10))
         ctk.CTkButton(
-            frame, text="See the sources",
+            frame, text="See the sample page",
             corner_radius=999,
             font=("Arial", 15, "bold"),
             height=40,
-            command=lambda: webbrowser.open(_github_url)
+            command=lambda: app.sample.Page(self.master).render()
         ).grid()
